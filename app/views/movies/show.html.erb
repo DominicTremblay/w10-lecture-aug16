@@ -1,0 +1,41 @@
+<%= link_to 'All movies', movies_path %>
+
+<p>
+<%= @movie.title %>
+</p>
+<%= image_tag(@movie.image_url) %>
+
+<h2>Movie Reviews</h2>
+
+<%= form_for [@movie, @review] do |f| %>
+
+      <% if @review.errors.any? %>
+        <div id="error_explanation" class='well'>
+
+          <ul>
+            <% @review.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :rating %>
+        <%= f.text_field :rating %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :comment %>
+        <%= f.text_field :comment %>
+      </div>
+
+      <%= f.submit 'Add Review' %>
+
+    <% end  %>
+
+
+<ul>
+
+  <%= render @reviews %>
+
+</ul>

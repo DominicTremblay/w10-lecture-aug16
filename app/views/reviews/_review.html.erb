@@ -1,0 +1,6 @@
+ <li class="list-group-item">Rating: <%= review.rating %></li>
+ <li class="list-group-item">Comment: <%= review.comment %></li>
+
+ <!-- We need to delete with a nested route. Thus, using [@movie, review] -->
+ <li class="list-group-item"><%= link_to 'Delete', [@movie, review], method: 'delete', data: {confirm: 'Are you sure?'} %></li>
+<hr>

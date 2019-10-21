@@ -1,0 +1,12 @@
+<div class="media">
+  <div class="media-left">
+    <%= link_to image_tag(movie.image_url), movie_path(movie), :class => "media-object movie-thumb" %>
+  </div>
+  <div class="media-body">
+    <%= link_to movie.title, movie_path(movie), :class => "media-heading" %>
+    <p>Release date: <%= movie.release_date %><br>
+      Director: <%= movie.director %><br>
+      Runtime: <%= movie.runtime_in_minutes %> minutes<br>
+      Description: <%= movie.description %></p>
+  </div>
+</div>
